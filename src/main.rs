@@ -259,14 +259,14 @@ fn map_property_name(mixpanel_prop: &str) -> Option<String> {
         }
         "$timezone" | "timezone" => Some("$geoip_time_zone".to_string()),
 
-        // User properties
+        // User/Person properties (no $ prefix per PostHog convention)
         "$user_id" | "user_id" => Some("$user_id".to_string()),
-        "$email" | "email" => Some("$email".to_string()),
-        "$name" | "name" => Some("$name".to_string()),
-        "$first_name" | "first_name" => Some("$first_name".to_string()),
-        "$last_name" | "last_name" => Some("$last_name".to_string()),
-        "$phone" | "phone" => Some("$phone".to_string()),
-        "$avatar" | "avatar" => Some("$avatar".to_string()),
+        "$email" | "email" => Some("email".to_string()),
+        "$name" | "name" => Some("name".to_string()),
+        "$first_name" | "first_name" => Some("first_name".to_string()),
+        "$last_name" | "last_name" => Some("last_name".to_string()),
+        "$phone" | "phone" => Some("phone".to_string()),
+        "$avatar" | "avatar" => Some("avatar".to_string()),
 
         // Session properties
         "$session_id" | "session_id" => Some("$session_id".to_string()),
